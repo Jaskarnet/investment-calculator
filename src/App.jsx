@@ -62,13 +62,17 @@ function App() {
           />
         </div>
       </div>
-      <Result
-        initialInvestment={initialInvestment}
-        annualInvestment={annualInvestment}
-        duration={duration}
-        expectedReturn={expectedReturn}
-        id="result"
-      />
+      {duration <= 0 ? (
+        "Wrong duration"
+      ) : (
+        <Result
+          initialInvestment={initialInvestment}
+          annualInvestment={annualInvestment}
+          duration={duration}
+          expectedReturn={expectedReturn}
+          id="result"
+        />
+      )}
     </>
   );
 }
